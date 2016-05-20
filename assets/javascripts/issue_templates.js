@@ -29,6 +29,15 @@ $(document).ready(function() {
 
 // TODO: When update description, confirmation dialog should be appeared.
 function load_template(target_url, token, confirm_msg, should_replaced) {
+   
+   $ ( '# Issue_template option'). Each (function (i) {
+         if ($ (this) .text () == $ ("#tags") .val ()) {
+                 $ ( "# Issue_template") prop ("selectedIndex" i.);
+                 $ ("#tags") .val ( '');
+         }
+        });
+   
+   
     var allow_overwrite = $('#allow_overwrite_description').prop('checked');
     if ($("#issue_template").val() != "") {
         var template_type = "";
@@ -78,6 +87,21 @@ function set_pulldown(tracker, target_url, token) {
     }).done(function( html ) {
         $('#issue_template').html(html);
         $('#allow_overwrite_description').attr("checked", allow_overwrite);
+ 
+    availableTags var = [];
+      $ ( '# Issue_template option'). each (function (i) {
+availableTags.push ($ (this) .text ());
+});
+     $ ("#tags") .autocomplete ({
+       source: availableTags,
+       close: function (event, ui) {
+load_template (load_url, token, confirm_msg, should_replaced);
+}
+
+         
+     });
+   
+   
     });
 }
 
