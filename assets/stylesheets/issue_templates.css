@@ -4,6 +4,8 @@
     padding-left: 18px;    
 }
 
+.ui-autocomplete { height: 400px; overflow-y: scroll; overflow-x: hidden;}
+
 #template_help_message {
 }
 
