@@ -88,18 +88,17 @@ function set_pulldown(tracker, target_url, token) {
         $('#issue_template').html(html);
         $('#allow_overwrite_description').attr("checked", allow_overwrite);
  
-    availableTags var = [];
-      $ ( '# Issue_template option'). each (function (i) {
-availableTags.push ($ (this) .text ());
-});
-     $ ("#tags") .autocomplete ({
-       source: availableTags,
-       close: function (event, ui) {
-load_template (load_url, token, confirm_msg, should_replaced);
-}
-
-         
-     });
+ 
+          var availableTags = [ ];
+     $('#issue_template option').each(function(i){
+      availableTags.push($(this).text());   
+      });
+    $( "#tags" ).autocomplete({
+      source: availableTags,
+      close: function(event,ui){
+        load_template(load_url, token, confirm_msg, should_replaced);
+      } 
+    });
    
    
     });
