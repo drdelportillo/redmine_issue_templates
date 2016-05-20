@@ -30,13 +30,13 @@ $(document).ready(function() {
 // TODO: When update description, confirmation dialog should be appeared.
 function load_template(target_url, token, confirm_msg, should_replaced) {
    
-   $ ( '# Issue_template option'). Each (function (i) {
-         if ($ (this) .text () == $ ("#tags") .val ()) {
-                 $ ( "# Issue_template") prop ("selectedIndex" i.);
-                 $ ("#tags") .val ( '');
+ 
+     $ ( '#issue_template option').each (function (i) {
+         if ($ (this).text() == $ ("#tags").val ()) {
+                 $ ( "#issue_template").prop("selectedIndex",i);
+                 $ ("#tags").val ('');
          }
         });
-   
    
     var allow_overwrite = $('#allow_overwrite_description').prop('checked');
     if ($("#issue_template").val() != "") {
